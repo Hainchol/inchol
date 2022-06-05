@@ -1,21 +1,21 @@
 package Calculator;
 
-import java.awt.BorderLayout;
-import java.awt.Font;
-import java.awt.GridLayout;
-import java.awt.Image;
-import java.awt.Label;
-import java.awt.Toolkit;
+import java.awt.borderLayout;
+import java.awt.font;
+import java.awt.gridLayout;
+import java.awt.image;
+import java.awt.label;
+import java.awt.toolkit;
 import java.awt.*;
-import javax.swing.AbstractButton;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
+import javax.swing.abstractButton;
+import javax.swing.jButton;
+import javax.swing.jFrame;
+import javax.swing.jLabel;
+import javax.swing.jPanel;
+import javax.swing.jTextField;
 import javax.swing.*;
 
-public class Calculator extends JFrame {
+public class Calculator extends jFrame {
    private double op1 = 0;
    private double op2 = 0;
    private String operator;
@@ -26,17 +26,17 @@ public class Calculator extends JFrame {
       Image picture = Toolkit.getDefaultToolkit().getImage("calculator.gif");
       this.setIconImage(picture);
       this.setBounds(100,100,400,500);
-      this.setLayout(new BorderLayout());
-      JTextField display = new JTextField("0");
+      this.setLayout(new borderLayout());
+      JTextField display = new jTextField("0");
       display.setFont(new Font("궁서체", Font.BOLD, 50));
-      display.setHorizontalAlignment(JTextField.RIGHT);
-      JPanel panel = new JPanel();
+      display.setHorizontalAlignment(jTextField.RIGHT);
+      JPanel panel = new jPanel();
       panel.setLayout(new GridLayout(4, 4));
-      JLabel status = new JLabel("계산기 입니다.");
+      JLabel status = new jLabel("계산기 입니다.");
       
       
       for (int i = 7; i < 10; i++) {
-         JButton btn = new JButton("" + i);
+         JButton btn = new jButton("" + i);
          btn.addActionListener(e-> {
             if(display.getText().equals("0")) {
                display.setText(btn.getText());
@@ -48,7 +48,7 @@ public class Calculator extends JFrame {
          panel.add(btn);
       }
       
-      JButton btnmultiply = new JButton("×");
+      JButton btnmultiply = new jButton("×");
       btnmultiply.addActionListener(e->{
          op1 = Double.parseDouble(display.getText());
          display.setText("0");
